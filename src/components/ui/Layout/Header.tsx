@@ -1,30 +1,22 @@
+import Image from '@/components/ui/Elements/Image'
 import { Link } from 'react-router-dom'
-import NavigationBar from '../Menu/NavigationBar'
+import NavigationBar from '../Menu/PC/NavigationBar'
+import PhoneNavigationBar from '../Menu/Phone/PhoneNavigationBar'
 
 const Header = () => {
   return (
     <>
-      <header className="fixed z-20 w-full flex">
+      <header className="fixed z-20 w-full min-w-[360px] bg-streetlaw-500 h-20 flex justify-center">
+        {/* Mobile menu */}
+        <PhoneNavigationBar />
+
         {/* Logo */}
         <Link to="/">
-          <img src="/logo.svg" alt="StreetLaw logo" width="80" height="80" />
+          <Image src="/logo.svg" alt="StreetLaw logo" className="w-20 h-20 cursor-pointer" />
         </Link>
 
-        {/* Menu */}
+        {/* Big screen Menu */}
         <NavigationBar />
-
-        {/* English link*/}
-        <img
-          src="/assets/uk.svg"
-          alt="english version"
-          className="h-8 w-auto absolute right-12 top-1"
-        />
-        {/* Facebook logo */}
-        <img
-          src="/assets/facebook.png"
-          alt="english version"
-          className="h-8 w-auto absolute right-2 top-1"
-        />
       </header>
       <div className="pb-20"></div>
     </>

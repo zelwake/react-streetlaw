@@ -4,9 +4,17 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        Titillium: ['Titillium Web', 'sans-serif']
-      }
-    }
+        Titillium: ['Titillium Web', 'sans-serif'],
+      },
+      boxShadow: {
+        sl: '0px 3px 10px rgba(0, 0, 0, 0.16);',
+      },
+      colors: {
+        streetlaw: {
+          500: '#A0CE57',
+        },
+      },
+    },
   },
-  plugins: []
-};
+  plugins: [],
+}
