@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import NavigationBar from '../Menu/NavigationBar'
 
 const Header = () => {
   return (
@@ -10,7 +11,7 @@ const Header = () => {
         </Link>
 
         {/* Menu */}
-        {/* <NavigationBar /> */}
+        <NavigationBar />
 
         {/* English link*/}
         <img
