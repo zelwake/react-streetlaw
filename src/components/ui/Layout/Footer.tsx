@@ -2,7 +2,7 @@ import Image from '../Elements/Image'
 
 const Footer = () => {
   return (
-    <footer className="bg-black absolute bottom-0 w-full py-6 flex flex-col gap-4 items-center">
+    <footer className="bg-black w-full py-6 flex flex-col gap-4 items-center">
       <div>
         <Image src="/footer/logo-white.svg" alt="streetlaw footer logo" footerImage />
       </div>
