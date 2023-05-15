@@ -10,20 +10,20 @@ const MainHero = () => {
   return (
     <>
       {/* Mobile Hero */}
-      <div>
-        <image className="block bg-streetlaw-500 w-screen pt-1">
+      <header>
+        <div role="img-bg" className="bg-streetlaw-500 w-screen pt-1">
           <img src={hero.url} alt={hero.title} className="m-auto max-w-xs md:max-w-2xl" />
-        </image>
+        </div>
         <p className="w-full bg-streetlaw-500 text-center text-white text-2xl font-bold py-6 px-10">
           {hero.title}
         </p>
         {/* PC Hero */}
-      </div>
-      <div className="max-lg:hidden">
+      </header>
+      <header className="max-lg:hidden">
         <p>{hero.title}</p>
         <img src={hero.url} alt={hero.title} />
         <p>{hero.title}</p>
-      </div>
+      </header>
     </>
   )
 }

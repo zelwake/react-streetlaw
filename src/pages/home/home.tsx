@@ -1,19 +1,27 @@
 import MainHero from './MainHero'
+import Motto from './Motto'
+import Statistics from './Statistics'
 
 const Home = () => {
   return (
-    // Fotka s textem
-    <MainHero />
+    <>
+      {/* Fotka s textem */}
+      <MainHero />
 
-    // Text zažít právo jinak
+      <section className="px-8">
+        {/* Text zažít právo jinak */}
+        <Motto />
 
-    // Statistika
+        {/* Statistika */}
+        <Statistics />
 
-    // Aktuality
+        {/* Aktuality */}
 
-    // Kalendář
+        {/* Kalendář */}
 
-    // Instagram
+        {/* Instagram */}
+      </section>
+    </>
   )
 }
 
