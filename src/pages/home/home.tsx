@@ -1,9 +1,17 @@
 import NewsBlock from '@/components/ui/Elements/NewsBlock'
+import { NewsProps } from '@/components/ui/Elements/interface'
+import { fetchData } from '@/utils/fetchData'
+import { useQuery } from '@tanstack/react-query'
 import MainHero from './MainHero'
 import Motto from './Motto'
 import Statistics from './Statistics'
 
 const Home = () => {
+  const { isLoading, isError, data } = useQuery({
+    queryKey: ['landingPageNews'],
+    queryFn: () => fetchData<NewsProps[]>(`https://streetlaw.eu/wp-json/wp/v2/posts?per_page=5`),
+  })
+
   return (
     <>
       {/* Fotka s textem */}
@@ -17,7 +25,7 @@ const Home = () => {
         <Statistics />
 
         {/* Aktuality */}
-        <NewsBlock url="https://streetlaw.eu/wp-json/wp/v2/posts?per_page=5" title />
+        <NewsBlock data={data} isError={isError} isLoading={isLoading} />
 
         {/* Kalendář */}
 
