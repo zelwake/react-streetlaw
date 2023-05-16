@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 import { dateJSX } from './dateJSX'
 import { NewsProps } from './interface'
 
-const News = () => {
+const NewsBlock = ({ url, title }: { url: string; title?: boolean }) => {
   const { isLoading, isError, data } = useQuery({
-    queryKey: ['landingPageNews'],
-    queryFn: () => fetchData<NewsProps[]>('https://streetlaw.eu/wp-json/wp/v2/posts?per_page=5'),
+    queryKey: ['landingPageNews', url],
+    queryFn: () => fetchData<NewsProps[]>(url),
   })
 
   if (isLoading) {
@@ -20,7 +20,7 @@ const News = () => {
 
   return (
     <section className="px-1">
-      <h2 className="text-3xl font-semibold text-gray-600 mb-4">Aktuality</h2>
+      {title && <h2 className="text-3xl font-semibold text-gray-600 mb-4">Aktuality</h2>}
       <ul>
         {data.map((post) => {
           const innerDiv = `<h3>${post.title.rendered}</h3>` + post.excerpt.rendered
@@ -48,4 +48,4 @@ const News = () => {
   )
 }
 
-export default News
+export default NewsBlock

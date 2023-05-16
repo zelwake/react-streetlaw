@@ -8,7 +8,7 @@ const PhoneNavigationBar = () => {
   const [menuVisibility, setMenuVisibility] = useState<boolean>(false) //todo předělat na context
 
   return (
-    <nav className="absolute left-0 w-screen lg:hidden">
+    <nav className="absolute left-0 w-16 lg:hidden">
       <Image
         src="/assets/menu.svg"
         alt="menu button"
@@ -18,7 +18,7 @@ const PhoneNavigationBar = () => {
       <ul
         className={
           menuVisibility
-            ? 'w-full bg-gray-200 text-xl text-center border-t-2 border-gray-600'
+            ? 'w-screen bg-gray-200 text-xl text-center border-t-2 border-gray-600'
             : 'hidden'
         }>
         <PhoneMenuGroup linkList={streetlaw} name="Street Law" />

@@ -1,6 +1,6 @@
+import NewsBlock from '@/components/ui/Elements/NewsBlock'
 import MainHero from './MainHero'
 import Motto from './Motto'
-import News from './News'
 import Statistics from './Statistics'
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
         <Statistics />
 
         {/* Aktuality */}
-        <News />
+        <NewsBlock url="https://streetlaw.eu/wp-json/wp/v2/posts?per_page=5" title />
 
         {/* Kalendář */}
 
