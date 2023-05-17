@@ -2,7 +2,8 @@ import Layout from '@/components/ui/Layout/Layout'
 import ErrorPage from '@/pages/ErrorPage'
 import { createBrowserRouter } from 'react-router-dom'
 import Home from './home/home'
-import NewsPage, { Category } from './news/NewsPage'
+import NewsPage, { Category } from './newsPage/NewsPage'
+import SingleNews from './singleNews/single'
 
 export const router = createBrowserRouter([
   {
@@ -15,11 +16,16 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/aktuality/',
+        path: 'aktuality',
         element: <NewsPage category={Category.news} />,
+        children: [],
       },
       {
-        path: '/medialni-ohlasy/',
+        path: 'aktuality/:slug',
+        element: <SingleNews />,
+      },
+      {
+        path: 'medialni-ohlasy',
         element: <NewsPage category={Category.media} />,
       },
     ],
