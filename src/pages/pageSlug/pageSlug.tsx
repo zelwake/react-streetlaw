@@ -24,7 +24,6 @@ const PageSlug = () => {
     import.meta.env.VITE_BASE_URL
   )
 
-  console.log(articleData)
   return (
     <>
       <header className="bg-streetlaw-500 text-white px-6 py-3">

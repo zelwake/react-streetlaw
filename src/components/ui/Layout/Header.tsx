@@ -13,7 +13,7 @@ const Header = () => {
           <PhoneNavigationBar />
 
           {/* Logo */}
-          <Link to="/">
+          <Link to="/" onClick={() => window.scrollTo(0, 0)}>
             <Image src="/logo.svg" alt="StreetLaw logo" className="w-20 h-20 cursor-pointer" />
           </Link>
         </MobileMenuProvider>
