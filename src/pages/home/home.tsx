@@ -25,7 +25,10 @@ const Home = () => {
         <Statistics />
 
         {/* Aktuality */}
-        <NewsBlock data={data} isError={isError} isLoading={isLoading} />
+        <section>
+          <h2 className="text-3xl font-semibold text-gray-600 mb-4">Aktuality</h2>
+          <NewsBlock data={data} isError={isError} isLoading={isLoading} />
+        </section>
 
         {/* Kalendář */}
 

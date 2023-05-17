@@ -2,20 +2,13 @@ import { Link } from 'react-router-dom'
 import { dateJSX } from './dateJSX'
 import { NewsProps } from './interface'
 
-type DataProps = {
-  res: NewsProps[]
-  totalPages: number
-}
-
-const NewsBlock = ({
-  isLoading,
-  isError,
-  data,
-}: {
+type NewsBlockProps = {
   isLoading: boolean
   isError: boolean
   data: NewsProps[] | undefined
-}) => {
+}
+
+const NewsBlock = ({ isLoading, isError, data }: NewsBlockProps) => {
   if (isLoading) {
     return <span>Načítání...</span>
   }

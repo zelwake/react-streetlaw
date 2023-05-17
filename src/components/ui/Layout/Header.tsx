@@ -1,4 +1,5 @@
 import Image from '@/components/ui/Elements/Image'
+import MobileMenuProvider from '@/context/MobileMenuContext'
 import { Link } from 'react-router-dom'
 import NavigationBar from '../Menu/PC/NavigationBar'
 import PhoneNavigationBar from '../Menu/Phone/PhoneNavigationBar'
@@ -8,12 +9,14 @@ const Header = () => {
     <>
       <header className="fixed z-20 w-full min-w-[360px] bg-streetlaw-500 h-20 flex justify-center">
         {/* Mobile menu */}
-        <PhoneNavigationBar />
+        <MobileMenuProvider>
+          <PhoneNavigationBar />
 
-        {/* Logo */}
-        <Link to="/">
-          <Image src="/logo.svg" alt="StreetLaw logo" className="w-20 h-20 cursor-pointer" />
-        </Link>
+          {/* Logo */}
+          <Link to="/">
+            <Image src="/logo.svg" alt="StreetLaw logo" className="w-20 h-20 cursor-pointer" />
+          </Link>
+        </MobileMenuProvider>
 
         {/* Big screen Menu */}
         <NavigationBar />

@@ -1,11 +1,19 @@
+import { MobileMenuContext } from '@/context/MobileMenuContext'
 import { menuItems } from '@/data/menuItems'
-import { useState } from 'react'
+import { useContext, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import Image from '../../Elements/Image'
 import PhoneMenuGroup from '../Phone/PhoneMenuGroup'
 
 const PhoneNavigationBar = () => {
   const { conabizime, materialy, onas, streetlaw } = menuItems
-  const [menuVisibility, setMenuVisibility] = useState<boolean>(false) //todo předělat na context
+  const { isMobileMenuOpen, setMobileMenuOpen } = useContext(MobileMenuContext)
+
+  const location = useLocation()
+
+  useEffect(() => {
+    setMobileMenuOpen(false)
+  }, [location])
 
   return (
     <nav className="absolute left-0 w-16 lg:hidden">
@@ -13,12 +21,12 @@ const PhoneNavigationBar = () => {
         src="/assets/menu.svg"
         alt="menu button"
         className="my-5 pl-5"
-        onClick={() => setMenuVisibility((prev) => !prev)}
+        onClick={() => setMobileMenuOpen((prev: boolean) => !prev)}
       />
       <ul
         className={
-          menuVisibility
-            ? 'w-screen bg-gray-200 text-xl text-center border-t-2 border-gray-600'
+          isMobileMenuOpen
+            ? 'w-screen max-h-[calc(100vh-80px)] overflow-y-scroll bg-gray-200 text-xl text-center border-t-2 border-gray-600'
             : 'hidden'
         }>
         <PhoneMenuGroup linkList={streetlaw} name="Street Law" />
