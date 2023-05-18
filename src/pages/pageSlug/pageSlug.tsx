@@ -19,10 +19,10 @@ const PageSlug = () => {
     return <span>Vyskytla se chyba</span>
   }
 
-  const articleData = data[0].content.rendered.replaceAll(
-    /https:\/\/streetlaw.eu/g,
-    import.meta.env.VITE_BASE_URL
-  )
+  const pattern = /https:\/\/streetlaw\.eu\/(?!.*wp-content)/g
+  const replace = import.meta.env.VITE_BASE_URL + '/'
+
+  const articleData = data[0].content.rendered.replace(pattern, replace)
 
   return (
     <>
