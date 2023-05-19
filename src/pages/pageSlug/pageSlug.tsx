@@ -19,10 +19,7 @@ const PageSlug = () => {
     return <span>Vyskytla se chyba</span>
   }
 
-  const pattern = /https:\/\/streetlaw\.eu\/(?!.*wp-content)/g
-  const replace = import.meta.env.VITE_BASE_URL + '/'
-
-  const articleData = data[0].content.rendered.replace(pattern, replace)
+  const articleData = replaceData(data)
 
   return (
     <>
@@ -55,3 +52,10 @@ const PageSlug = () => {
 }
 
 export default PageSlug
+
+function replaceData(data: PageProps[]) {
+  const pattern = /https:\/\/streetlaw\.eu\/(?!.*wp-content)/g
+  const replace = import.meta.env.VITE_BASE_URL + '/'
+
+  return data[0].content.rendered.replace(pattern, replace)
+}
