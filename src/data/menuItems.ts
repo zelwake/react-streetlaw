@@ -16,21 +16,21 @@ export const menuItems = {
     },
     {
       name: 'Pětidenní seminář Street Law: Lidská práva v praxi',
-      link: 'petidenni-seminar-street-law-lidska-prava-v-praxi',
+      link: 'lidskapravavpraxi',
     },
   ],
   conabizime: [
     { name: 'Kurzy pro učitele', link: 'kurzy-pro-ucitele' },
     { name: 'Pro školy', link: 'pro-skoly' },
     { name: 'Semináře pro veřejnost', link: 'seminare-pro-verejnost' },
-    { name: 'Mezinárodní Středoškolský Moot Court', link: 'mezinarodni-stredoskolsky-moot-court' },
+    { name: 'Mezinárodní Středoškolský Moot Court', link: 'street-law-moot-court-competition' },
   ],
   materialy: [
     { name: 'Vše na jednom místě', link: 'vse-na-jednom-miste' },
-    { name: 'Databáze hodin', link: 'databaze-hodin' },
-    { name: 'Aktivity a sborníky', link: 'aktivity-a-sborniky' },
+    { name: 'Databáze hodin', link: 'http://streetlaw.livepreview.cz/lekce' },
+    { name: 'Aktivity a sborníky', link: 'sborniky-hodin' },
     { name: 'Simulované soudy', link: 'simulovane-soudy' },
     { name: 'Testy', link: 'testy' },
-    { name: 'Filmy a videa', link: 'filmy-a-videa' },
+    { name: 'Filmy a videa', link: 'http://streetlaw.livepreview.cz/materialy' },
   ],
 }
