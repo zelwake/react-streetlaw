@@ -1,4 +1,5 @@
 import { PageProps } from '@/components/ui/Elements/interface'
+import PageHeading from '@/components/ui/Layout/PageHeading'
 import { fetchData } from '@/utils/fetchData'
 import { useQuery } from '@tanstack/react-query'
 import { useParams } from 'react-router-dom'
@@ -19,13 +20,11 @@ const PageSlug = () => {
     return <span>Vyskytla se chyba</span>
   }
 
-  const articleData = replaceData(data)
+  const articleData = replaceURL(data)
 
   return (
     <>
-      <header className="bg-streetlaw-500 text-white px-6 py-3">
-        <h1 className="text-3xl font-semibold text-center">{data[0].title.rendered}</h1>
-      </header>
+      <PageHeading title={data[0].title.rendered} />
       <style>{`
           p {
             font-size: 18px;
@@ -53,7 +52,7 @@ const PageSlug = () => {
 
 export default PageSlug
 
-function replaceData(data: PageProps[]) {
+function replaceURL(data: PageProps[]) {
   const pattern = /https:\/\/streetlaw\.eu\/(?!.*wp-content)/g
   const replace = import.meta.env.VITE_BASE_URL + '/'
 

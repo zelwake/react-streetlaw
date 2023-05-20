@@ -5,6 +5,7 @@ import Home from './home/home'
 import NewsPage, { Category } from './newsPage/NewsPage'
 import PageSlug from './pageSlug/pageSlug'
 import SingleNews from './singleNews/single'
+import Team from './team/team'
 
 export const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
             element: <SingleNews />,
           },
         ],
+      },
+      {
+        path: 'nas-tym',
+        element: <Team />,
       },
       {
         path: ':slug',
