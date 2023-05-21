@@ -19,7 +19,7 @@ const NewsPage = ({ category }: NewsPageProps) => {
   const [numberOfPages, setNumberOfPages] = useState<number>(0)
 
   const { isLoading, isError, data } = useQuery({
-    queryKey: ['landingPageNews', pageNumber, category],
+    queryKey: ['categoryPageList', pageNumber, category],
     queryFn: () =>
       fetchPaginatedData<NewsProps[]>(
         `https://streetlaw.eu/wp-json/wp/v2/posts?per_page=10&categories=${category}&page=${pageNumber}`
@@ -30,12 +30,12 @@ const NewsPage = ({ category }: NewsPageProps) => {
 
   return (
     <>
-      <header className="bg-streetlaw-500 text-white flex items-center justify-center h-20">
-        <h1 className="text-4xl font-semibold">
+      <header className="bg-streetlaw-500 text-white flex items-center justify-center h-20 sm:h-32">
+        <h1 className="text-4xl sm:text-5xl font-semibold">
           {category == Category.news ? 'Aktuality' : 'Mediální ohlasy'}
         </h1>
       </header>
-      <section className="px-8 my-8 flex flex-col gap-10">
+      <section className="px-8 my-8 sm:my-14 flex flex-col gap-10 sm:gap-14">
         <NewsBlock isLoading={isLoading} isError={isError} data={data?.res} />
         <Pagination
           pageNumber={pageNumber}

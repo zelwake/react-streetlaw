@@ -18,7 +18,7 @@ const Header = () => {
             onClick={() => window.scrollTo(0, 0)}
             className="sm:flex sm:justify-center sm:items-center">
             <Image src="/logo.svg" alt="StreetLaw logo" className="w-32 h-20 cursor-pointer" />
-            <span className="hidden sm:block text-5xl font-semibold text-white">Street Law</span>
+            <span className="hidden sm:block text-4xl font-semibold text-white">Street Law</span>
           </Link>
         </MobileMenuProvider>
 

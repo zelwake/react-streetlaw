@@ -3,8 +3,8 @@ import ErrorPage from '@/pages/ErrorPage'
 import { Outlet, createBrowserRouter } from 'react-router-dom'
 import Home from './home/home'
 import NewsPage, { Category } from './newsPage/NewsPage'
+import NewsSlug from './newsSlug/newsSlug'
 import PageSlug from './pageSlug/pageSlug'
-import SingleNews from './singleNews/single'
 import Team from './team/team'
 
 export const router = createBrowserRouter([
@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
           },
           {
             path: ':slug',
-            element: <SingleNews />,
+            element: <NewsSlug />,
           },
         ],
       },
@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
           },
           {
             path: ':slug',
-            element: <SingleNews />,
+            element: <NewsSlug />,
           },
         ],
       },

@@ -1,14 +1,15 @@
-import DateJSX from '@/components/ui/Elements/DateJSX'
 import { NewsProps } from '@/components/ui/Elements/interface'
+import PageHeading from '@/components/ui/Layout/PageHeading'
 import { fetchData } from '@/utils/fetchData'
+import { parseDate } from '@/utils/parseDate'
 import { useQuery } from '@tanstack/react-query'
 import { useParams } from 'react-router-dom'
 
-const SingleNews = () => {
+const NewsSlug = () => {
   const { slug } = useParams()
 
   const { isLoading, isError, data } = useQuery({
-    queryKey: ['singleNewsPage', slug],
+    queryKey: ['newsSlug', slug],
     queryFn: () => fetchData<NewsProps[]>('https://streetlaw.eu/wp-json/wp/v2/posts?slug=' + slug),
   })
 
@@ -20,17 +21,17 @@ const SingleNews = () => {
     return <span>Vyskytla se chyba</span>
   }
 
+  const date = parseDate(data[0].date)
+
   return (
     <>
-      <header className="bg-streetlaw-500 text-white px-6 pt-3 ">
-        <h1 className="text-3xl font-semibold text-center">{data[0].title.rendered}</h1>
-        <DateJSX date={data[0].date} />
-      </header>
+      <PageHeading title={data[0].title.rendered} date={date} />
       <style>{`
         article p {
           font-size: 18px;
           line-height: 28px;
           margin-bottom: 12px;
+          text-align: justify;
         }
 
         article a {
@@ -45,4 +46,4 @@ const SingleNews = () => {
   )
 }
 
-export default SingleNews
+export default NewsSlug
