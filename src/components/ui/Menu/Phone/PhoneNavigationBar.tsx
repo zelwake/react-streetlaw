@@ -1,7 +1,7 @@
 import { MobileMenuContext } from '@/context/MobileMenuContext'
 import { menuItems } from '@/data/menuItems'
 import { useContext, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import Image from '../../Elements/Image'
 import PhoneMenuGroup from '../Phone/PhoneMenuGroup'
 
@@ -20,7 +20,7 @@ const PhoneNavigationBar = () => {
       <Image
         src="/assets/menu.svg"
         alt="menu button"
-        className="my-5 pl-5"
+        className="my-5 pl-5 cursor-pointer"
         onClick={() => setMobileMenuOpen((prev: boolean) => !prev)}
       />
       <ul
@@ -37,7 +37,9 @@ const PhoneNavigationBar = () => {
           {/* English link*/}
           <img src="/assets/uk.svg" alt="english version" className="h-8 w-8 scale-150" />
           {/* Facebook logo */}
-          <img src="/assets/facebook.png" alt="english version" className="h-8 w-8 scale-150" />
+          <Link to={'https://facebook.com/StreetLawCR'}>
+            <img src="/assets/facebook.png" alt="english version" className="h-8 w-8 scale-150" />
+          </Link>
         </li>
       </ul>
     </nav>

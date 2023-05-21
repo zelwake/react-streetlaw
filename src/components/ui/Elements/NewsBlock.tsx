@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { dateJSX } from './dateJSX'
+import DateJSX from './DateJSX'
 import { NewsProps } from './interface'
 
 const categoryGroup = ['', '', 'aktuality', 'medialni-ohlasy']
@@ -20,12 +20,12 @@ const NewsBlock = ({ isLoading, isError, data }: NewsBlockProps) => {
   }
 
   return (
-    <ul>
+    <ul className="max-w-4xl">
       {(data as NewsProps[]).map((post) => {
         const innerDiv = `<h3>${post.title.rendered}</h3>` + post.excerpt.rendered
 
         return (
-          <li key={post.id} className="mb-8 last:mb-0 flex flex-col">
+          <li key={post.id} className="mb-8 last:mb-0 flex flex-col sm:flex-row sm:gap-4">
             <style>{`
                 h3 {
                   font-size: 20px;
@@ -34,12 +34,11 @@ const NewsBlock = ({ isLoading, isError, data }: NewsBlockProps) => {
                   margin-bottom: 12px;
                 }
               `}</style>
-            {dateJSX(post.date)}
-            <Link to={urlCreator(post)}>
-              <div
-                className="shadow-sl px-4 py-2"
-                dangerouslySetInnerHTML={{ __html: innerDiv }}></div>
-            </Link>
+            <DateJSX date={post.date} />
+            <Link
+              to={urlCreator(post)}
+              className="shadow-sl px-4 py-2 grow"
+              dangerouslySetInnerHTML={{ __html: innerDiv }}></Link>
           </li>
         )
       })}

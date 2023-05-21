@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import PhoneMenuLink from './PhoneMenuLink'
 
 type MenuItem = {
@@ -8,6 +9,12 @@ type MenuItem = {
 
 const PhoneMenuGroup = ({ name, linkList }: { name: string; linkList: MenuItem[] }) => {
   const [showMenu, setShowMenu] = useState<boolean>(false)
+
+  const location = useLocation()
+
+  useEffect(() => {
+    setShowMenu(false)
+  }, [location])
 
   return (
     <li

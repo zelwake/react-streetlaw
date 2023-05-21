@@ -10,7 +10,7 @@ const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <main className="font-Titillium min-h-screen flex flex-col">
+      <main className="font-Titillium w-full min-h-screen flex flex-col">
         <RouterProvider router={router} />
       </main>
     </QueryClientProvider>

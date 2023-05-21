@@ -1,4 +1,4 @@
-import { dateJSX } from '@/components/ui/Elements/dateJSX'
+import DateJSX from '@/components/ui/Elements/DateJSX'
 import { NewsProps } from '@/components/ui/Elements/interface'
 import { fetchData } from '@/utils/fetchData'
 import { useQuery } from '@tanstack/react-query'
@@ -24,16 +24,16 @@ const SingleNews = () => {
     <>
       <header className="bg-streetlaw-500 text-white px-6 pt-3 ">
         <h1 className="text-3xl font-semibold text-center">{data[0].title.rendered}</h1>
-        {dateJSX(data[0].date)}
+        <DateJSX date={data[0].date} />
       </header>
       <style>{`
-        p {
+        article p {
           font-size: 18px;
           line-height: 28px;
           margin-bottom: 12px;
         }
 
-        a {
+        article a {
           color: black;
           text-decoration: underline;
         }
