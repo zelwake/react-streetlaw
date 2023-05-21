@@ -1,3 +1,4 @@
+import Article from '@/components/ui/Elements/Article'
 import { PageProps } from '@/components/ui/Elements/interface'
 import PageHeading from '@/components/ui/Layout/PageHeading'
 import { fetchData } from '@/utils/fetchData'
@@ -49,8 +50,13 @@ const PageSlug = () => {
           article strong {
             font-weight: 700;
           }
+
+          article figure {
+            margin-top: 20px;
+            margin-bottom: 20px;
+          }
         `}</style>
-      <article className="px-6 py-4" dangerouslySetInnerHTML={{ __html: articleData }}></article>
+      <Article data={articleData} />
     </>
   )
 }

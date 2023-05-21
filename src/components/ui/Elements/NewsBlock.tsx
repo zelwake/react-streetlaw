@@ -37,6 +37,7 @@ const NewsBlock = ({ isLoading, isError, data }: NewsBlockProps) => {
             <ListDateJSX date={post.date} />
             <Link
               to={urlCreator(post)}
+              onClick={() => window.scrollTo(0, 0)}
               className="shadow-sl px-4 py-2 grow"
               dangerouslySetInnerHTML={{ __html: innerDiv }}></Link>
           </li>

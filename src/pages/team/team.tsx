@@ -26,17 +26,21 @@ const Team = () => {
   return (
     <>
       <PageHeading title="Náš tým" />
-      <ul className="py-4 px-8">
+      <ul className="py-4 px-8 max-w-4xl m-auto">
         {data.map((user) => (
-          <li key={user.ID} className="first:mt-10 mt-20 flex flex-col gap-5">
+          <li
+            key={user.ID}
+            className="first:mt-10 md:first:mt-5 mt-20 md:mt-10 flex flex-col md:flex-row gap-5">
             <img
               src={user.image_src}
               alt={'profilová fotografie ' + user.image_alt}
-              className="w-48 h-48 rounded-full self-center"></img>
-            <h2 className="text-4xl font-semibold">{user.title}</h2>
-            <p
-              className="text-lg text-justify"
-              dangerouslySetInnerHTML={{ __html: user.content }}></p>
+              className="w-48 h-48 rounded-full self-center md:self-start md:mt-4"></img>
+            <article>
+              <h2 className="text-4xl font-semibold">{user.title}</h2>
+              <p
+                className="text-lg text-justify"
+                dangerouslySetInnerHTML={{ __html: user.content }}></p>
+            </article>
           </li>
         ))}
       </ul>

@@ -1,3 +1,4 @@
+import Article from '@/components/ui/Elements/Article'
 import { NewsProps } from '@/components/ui/Elements/interface'
 import PageHeading from '@/components/ui/Layout/PageHeading'
 import { fetchData } from '@/utils/fetchData'
@@ -38,10 +39,13 @@ const NewsSlug = () => {
           color: black;
           text-decoration: underline;
         }
+
+        article figure {
+          margin-top: 20px,
+          margin-bottom: 20px;
+        }
       `}</style>
-      <article
-        className="px-6 py-4"
-        dangerouslySetInnerHTML={{ __html: data[0].content.rendered }}></article>
+      <Article data={data[0].content.rendered} />
     </>
   )
 }
