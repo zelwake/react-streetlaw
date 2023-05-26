@@ -11,20 +11,21 @@ const MenuDropdownGroup = ({ name, linkList }: { name: string; linkList: MenuIte
 
   return (
     <>
-      {showMenu ? (
-        <div className="" onMouseLeave={() => setShowMenu(false)}>
-          <span className="">{name}</span>
-          <div className="">
+      <div
+        className="w-64"
+        onMouseLeave={() => setShowMenu(false)}
+        onMouseEnter={() => setShowMenu(true)}>
+        <span className="px-3 text-2xl w-inherit inline-block text-center cursor-pointer font-semibold">
+          {name}
+        </span>
+        {showMenu && (
+          <div className="absolute z-20 w-inherit bg-white">
             {linkList.map((item) => (
               <MenuDropdownLink key={item.link} text={item.name} link={item.link} />
             ))}
           </div>
-        </div>
-      ) : (
-        <div className="" onMouseEnter={() => setShowMenu(true)}>
-          <span className="">{name}</span>
-        </div>
-      )}
+        )}
+      </div>
     </>
   )
 }

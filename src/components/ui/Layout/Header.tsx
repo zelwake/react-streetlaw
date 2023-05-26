@@ -7,7 +7,7 @@ import PhoneNavigationBar from '../Menu/Phone/PhoneNavigationBar'
 const Header = () => {
   return (
     <>
-      <header className="fixed z-20 w-full min-w-[360px] bg-streetlaw-500 h-20 flex justify-center">
+      <header className="fixed z-20 w-full min-w-[360px] bg-streetlaw-500 lg:bg-white h-20 lg:h-10 flex justify-center lg:justify-start lg:shadow-sl">
         {/* Mobile menu */}
         <MobileMenuProvider>
           <PhoneNavigationBar />
@@ -16,9 +16,15 @@ const Header = () => {
           <Link
             to="/"
             onClick={() => window.scrollTo(0, 0)}
-            className="sm:flex sm:justify-center sm:items-center">
-            <Image src="/logo.svg" alt="StreetLaw logo" className="w-32 h-20 cursor-pointer" />
-            <span className="hidden sm:block text-4xl font-semibold text-white">Street Law</span>
+            className="sm:flex sm:justify-center sm:items-center lg:items-start">
+            <Image
+              src="/logo.svg"
+              alt="StreetLaw logo"
+              className="w-32 lg:w-20 h-20 cursor-pointer"
+            />
+            <span className="hidden sm:block lg:hidden text-4xl font-semibold text-white">
+              Street Law
+            </span>
           </Link>
         </MobileMenuProvider>
 

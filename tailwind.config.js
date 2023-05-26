@@ -14,6 +14,9 @@ module.exports = {
           500: '#A0CE57',
         },
       },
+      width: {
+        inherit: 'inherit',
+      },
     },
   },
   plugins: [],
