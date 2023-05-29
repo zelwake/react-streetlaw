@@ -12,7 +12,7 @@ const MenuDropdownGroup = ({ name, linkList }: { name: string; linkList: MenuIte
   return (
     <>
       <div
-        className="w-64"
+        className="w-52 xl:w-64"
         onMouseLeave={() => setShowMenu(false)}
         onMouseEnter={() => setShowMenu(true)}>
         <span className="px-3 text-2xl w-inherit inline-block text-center cursor-pointer font-semibold">
