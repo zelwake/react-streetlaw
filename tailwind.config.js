@@ -8,6 +8,7 @@ module.exports = {
       },
       boxShadow: {
         sl: '0px 3px 10px rgba(0, 0, 0, 0.16);',
+        slHover: '0 3px 10px rgba(0,0,0,0.35);',
       },
       colors: {
         streetlaw: {

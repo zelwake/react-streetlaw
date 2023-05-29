@@ -20,7 +20,7 @@ const NewsBlock = ({ isLoading, isError, data }: NewsBlockProps) => {
   }
 
   return (
-    <ul className="sm:max-w-3xl m-auto">
+    <ul className="sm:max-w-3xl xl:max-w-4xl m-auto">
       {(data as NewsProps[]).map((post) => {
         const innerDiv = `<h3>${post.title.rendered}</h3>` + post.excerpt.rendered
 
@@ -33,12 +33,30 @@ const NewsBlock = ({ isLoading, isError, data }: NewsBlockProps) => {
                   font-weight: 600;
                   margin-bottom: 12px;
                 }
+
+                p {
+                  font-size: 16px;
+                  line-height: 22px;
+                  font-weight: 400;
+                }
+
+                @media (min-width: 1024px) {
+                  h3 {
+                    font-size: 24px;
+                    line-height: 34px;
+                  }
+
+                  p {
+                    font-size: 18px;
+                    line-height: 24px;
+                  }
+                }
               `}</style>
             <ListDateJSX date={post.date} />
             <Link
               to={urlCreator(post)}
               onClick={() => window.scrollTo(0, 0)}
-              className="shadow-sl px-4 py-2 grow"
+              className="shadow-sl hover:shadow-slHover px-4 lg:px-6 py-2 lg:py-4 grow"
               dangerouslySetInnerHTML={{ __html: innerDiv }}></Link>
           </li>
         )

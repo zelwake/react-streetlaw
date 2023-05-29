@@ -17,7 +17,7 @@ const Home = () => {
       {/* Fotka s textem */}
       <MainHero />
 
-      <section className="px-8 my-8 flex flex-col gap-10 items-stretch sm:items-center">
+      <section className="px-8 my-8 flex flex-col gap-10 lg:gap-16 items-stretch sm:items-center">
         {/* Text zažít právo jinak */}
         <Motto />
 
@@ -25,7 +25,7 @@ const Home = () => {
         <Statistics />
 
         {/* Aktuality */}
-        <section className="">
+        <section>
           <h2 className="text-3xl sm:text-4xl font-semibold text-gray-700 mb-4 sm:mb-6">
             Aktuality
           </h2>
