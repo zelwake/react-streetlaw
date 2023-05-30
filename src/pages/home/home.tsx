@@ -12,6 +12,8 @@ const Home = () => {
     queryFn: () => fetchData<NewsProps[]>(`https://streetlaw.eu/wp-json/wp/v2/posts?per_page=5`),
   })
 
+  document.title = 'Streetlaw.eu'
+
   return (
     <>
       {/* Fotka s textem */}

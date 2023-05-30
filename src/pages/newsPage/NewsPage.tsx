@@ -26,7 +26,13 @@ const NewsPage = ({ category }: NewsPageProps) => {
       ),
   })
 
-  useEffect(() => data && setNumberOfPages(data.totalPages | 0), [data?.totalPages])
+  useEffect(() => {
+    if (data) {
+      setNumberOfPages(data.totalPages | 0)
+      document.title =
+        category == 2 ? 'Novinky' : category == 3 ? 'Mediální ohlasy' : 'Streetlaw.eu'
+    }
+  }, [data?.totalPages])
 
   return (
     <>
